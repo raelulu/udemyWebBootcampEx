@@ -19,6 +19,13 @@ fakeRequest("/dogs/1")
     console.log("OH NO!", err);
   });
 
+// const delayedColorChange = (newColor, delay, doNext) => {
+//     setTimeout(() => {
+//         document.body.style.backgroundColor = newColor;
+//         doNext && doNext();
+//     }, delay)
+// }
+
 // delayedColorChange("red", 1000, () => {
 //   delayedColorChange("orange", 1000, () => {
 //     delayedColorChange("yellow", 1000, () => {
@@ -32,13 +39,6 @@ fakeRequest("/dogs/1")
 //     });
 //   });
 // });
-
-// const delayedColorChange = (newColor, delay, doNext) => {
-//     setTimeout(() => {
-//         document.body.style.backgroundColor = newColor;
-//         doNext && doNext();
-//     }, delay)
-// }
 
 const delayedColorChange = (color, delay) => {
   return new Promise((resolve, reject) => {
