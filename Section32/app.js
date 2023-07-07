@@ -1,4 +1,8 @@
 const { PI, square } = require("./math");
-console.log(PI);
+const colors = require("colors");
 
-console.log(square(9));
+const cats = require("./shelter");
+// console.log(PI);
+
+// console.log(square(9));
+console.log("REQUIRED AN ENTIRE DIRECTORY!", cats);
