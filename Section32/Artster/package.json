@@ -1,18 +1,15 @@
 {
-  "name": "jokester",
+  "name": "artster",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Gorae",
   "license": "ISC",
   "dependencies": {
     "colors": "^1.4.0",
-    "franc": "^5.0.0",
-    "give-me-a-joke": "^0.5.1",
-    "update": "^0.7.4"
+    "figlet": "^1.6.0"
   }
 }
