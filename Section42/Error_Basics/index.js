@@ -20,13 +20,17 @@ const verifyPassword = (req, res, next) => {
   if (password === "chickennugget") {
     next();
   }
-  res.send("PASSWORD NEEDED!");
-  // throw new AppError('Password required!', 400)
+  //   res.send("PASSWORD NEEDED!");
+  throw new Error("Password required!");
 };
 
 app.get("/", (req, res) => {
   console.log(`REQUEST DATE: ${req.requestTime}`);
   res.send("HOME PAGE!");
+});
+
+app.get("/error", (req, res) => {
+  chicken.fly();
 });
 
 app.get("/dogs", (req, res) => {
@@ -44,18 +48,13 @@ app.use((req, res) => {
   res.status(404).send("NOT FOUND!");
 });
 
-// app.use((err, req, res, next) => {
-//     console.log("******************************************")
-//     console.log("*****************ERROR*****************")
-//     console.log("******************************************")
-//     console.log(err)
-//     next(err)
-// })
-
-// app.use((err, req, res, next) => {
-//   const { status = 500, message = "Something Went Wrong" } = err;
-//   res.status(status).send(message);
-// });
+app.use((err, req, res, next) => {
+  console.log("*********************************");
+  console.log("**************ERROR**************");
+  console.log("*********************************");
+  console.log(err);
+  next(err);
+});
 
 app.listen(3000, () => {
   console.log("App is running on localhost:3000");
