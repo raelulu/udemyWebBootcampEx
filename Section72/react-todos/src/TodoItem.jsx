@@ -33,7 +33,14 @@ export default function TodoItem({ todo, remove, toggle }) {
               onChange={toggle}
             />
           </ListItemIcon>
-          <ListItemText id={labelId} primary={todo.text} />
+          <ListItemText
+            id={labelId}
+            primary={todo.text}
+            sx={{
+              textDecoration: todo.completed ? "line-through" : "none",
+              color: todo.completed ? "gray" : "black",
+            }}
+          />
         </ListItemButton>
       </ListItem>
     </div>

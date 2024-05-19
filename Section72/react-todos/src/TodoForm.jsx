@@ -14,6 +14,7 @@ export default function TodoForm({ addTodo }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (text.trim() === "") {
+      alert("할 일을 입력해 주세요 ✍️");
       return;
     }
     addTodo(text);
@@ -30,6 +31,7 @@ export default function TodoForm({ addTodo }) {
           sx={{ width: "325px" }}
           onChange={handleChange}
           value={text}
+          placeholder="할 일..."
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">

@@ -9,6 +9,7 @@ const getInitialData = () => {
   if (!data) return [];
   return data;
 };
+
 export default function TodoList() {
   const [todos, setTodos] = useState(getInitialData);
 
@@ -57,7 +58,7 @@ export default function TodoList() {
           flexGrow: 1,
         }}
       >
-        Todos{" "}
+        할 일 목록
       </Typography>
       <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
         {todos.map((todo) => (
